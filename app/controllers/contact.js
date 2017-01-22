@@ -15,7 +15,6 @@ export default Ember.Controller.extend({
 
 	actions: {
     sendMessage() {
-      alert(`Saving of the following email address is in progress: ${this.get('emailAddress')}`);
       const email = this.get('emailAddress');
       const message = this.get('message');
       const newContact = this.store.createRecord('contact', { email: email, message: message });
