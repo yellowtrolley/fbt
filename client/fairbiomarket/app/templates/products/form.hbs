@@ -1,0 +1,13 @@
+<h2>{{title}}</h2>
+
+<div class="row">
+  <div class="col-md-6">
+    {{product-item-form item=model buttonLabel=buttonLabel action='saveProduct'}}
+  </div>
+
+  <div class="col-md-4">
+    {{#product-item item=model}}
+      <br/>
+    {{/product-item}}
+  </div>
+</div>

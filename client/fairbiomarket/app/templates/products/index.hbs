@@ -1,0 +1,13 @@
+<h1>Products</h1>
+{{#link-to 'products.new' class='btn btn-info'}}Add new product{{/link-to}}
+
+<div class="row">
+  {{#each model as |product|}}
+    <div class="col-md-4">
+      {{#product-item item=product}}
+        {{#link-to 'products.edit' product.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+        <button class="btn btn-danger btn-xs" {{action 'deleteProduct' product}}>Delete</button>
+      {{/product-item}}
+    </div>
+  {{/each}}
+</div>

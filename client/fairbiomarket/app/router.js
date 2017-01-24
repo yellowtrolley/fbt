@@ -13,11 +13,15 @@ Router.map(function() {
   this.route('admin', function() {
     this.route('invitations');
     this.route('contacts');
-    this.route('products');
+    this.route('users', function() {
+      this.route('new');
+    });
+    this.route('roles');
   });
 
-  this.route('libraries', function() {
+  this.route('products', function() {
     this.route('new');
+    this.route('edit', { path: '/:product_id/edit' });
   });
 });
 

@@ -1,0 +1,32 @@
+<h2>{{title}}</h2>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-horizontal">
+		  <div class="form-group has-feedback {{if model.isValid 'has-success'}}">
+		    <label class="col-sm-2 control-label">Name*</label>
+		    <div class="col-sm-10">
+		      {{input type="text" value=model.name class="form-control" placeholder="The name of the user"}}
+		      {{#if model.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Description</label>
+		    <div class="col-sm-10">
+		      {{input type="text" value=model.description class="form-control" placeholder="The description of the user"}}
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Price</label>
+		    <div class="col-sm-10">
+		      {{input type="text" value=model.price class="form-control" placeholder="The price of the user"}}
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default" {{action 'saveUser' model}} disabled={{unless model.isValid true}}>{{buttonLabel}}</button>
+		    </div>
+		  </div>
+		</div>
+  </div>
+</div>

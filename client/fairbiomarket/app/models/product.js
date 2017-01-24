@@ -1,9 +1,10 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
-  longDescription: DS.attr('string'),
+  long_description: DS.attr('string'),
 	brand:  DS.attr('string'),
 	price: DS.attr('number'),
 	rating: DS.attr('number'),

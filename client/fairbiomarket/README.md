@@ -50,3 +50,14 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
+
+### Route hooks order
+ * init() http://emberjs.com/api/classes/Ember.Route.html#method_init
+ * beforeModel(transition) http://emberjs.com/api/classes/Ember.Route.html#method_beforeModel
+ * model(params, transition) http://emberjs.com/api/classes/Ember.Route.html#method_model
+ * afterModel(model, transition) http://emberjs.com/api/classes/Ember.Route.html#method_afterModel
+ * activate() http://emberjs.com/api/classes/Ember.Route.html#method_activate
+ * setupController(controller, model) http://emberjs.com/api/classes/Ember.Route.html#method_setupController
+ * renderTemplate(controller, model) http://emberjs.com/api/classes/Ember.Route.html#method_renderTemplate
