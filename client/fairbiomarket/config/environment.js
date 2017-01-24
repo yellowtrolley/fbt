@@ -7,19 +7,19 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'auto',
 
-    // firebase: {
-    //   apiKey: 'AIzaSyAEtA5ED5NfpBqJawRJz0p4t4_pw8FkGSw',
-    //   authDomain: 'ember-fb80a.firebaseapp.com',
-    //   databaseURL: 'https://ember-fb80a.firebaseio.com',
-    //   storageBucket: 'ember-fb80a.appspot.com',
-    //   messagingSenderId: '696305523162'
-    // },
-    // // if using ember-cli-content-security-policy
-    // contentSecurityPolicy: {
-    //   'script-src': "'self' 'unsafe-eval' apis.google.com",
-    //   'frame-src': "'self' https://*.firebaseapp.com",
-    //   'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
-    // },
+    firebase: {
+      apiKey: 'AIzaSyAEtA5ED5NfpBqJawRJz0p4t4_pw8FkGSw',
+      authDomain: 'ember-fb80a.firebaseapp.com',
+      databaseURL: 'https://ember-fb80a.firebaseio.com',
+      storageBucket: 'ember-fb80a.appspot.com',
+      messagingSenderId: '696305523162'
+    },
+    // if using ember-cli-content-security-policy
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
 
 
     EmberENV: {
