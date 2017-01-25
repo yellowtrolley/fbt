@@ -5,32 +5,7 @@
     {{#if session.isAuthenticated}}
       {{outlet}}
     {{else}}
-        <div class="row">
-			    <div class="col-sm-4 col-sm-offset-4">
-			    <h2 class="form-signin-heading">Please sign in</h2>
-			        <form>
-			            <div class="form-group">
-			              <label>Email address</label>
-			              {{input value=email type="email" id="inputEmail" class="form-control" placeholder="Email address (try: admin@example.com)" required="" autofocus=""}}
-			            </div>
-			            <div class="form-group">
-			              <label>Password</label>
-			              {{input value=password type="password" id="inputPassword" class="form-control" placeholder="Password (try: admin123)" required=""}}
-			            </div>
-			            <button class="btn btn-lg btn-primary btn-block" {{action "signIn" email password}}>Sign in</button>
-			        </form>
-			        {{#if errorMessage}}
-							  <div class="alert alert-danger">
-							    <p>
-							      <strong>Login failed:</strong> <code>{{errorMessage}}</code>
-							    </p>
-							    <p>
-							      Documentation of the error codes can be found in the <a href="http://tools.ietf.org/html/rfc6749#section-5.2" title="RFC 6749 - Error Response">Error Response section of RFC 6749</a>.
-							    </p>
-							  </div>
-							{{/if}}
-			    </div>
-			</div>
+        {{login-form session=session signIn='signIn' signOut='signOut'}}
     {{/if}}
 
 </div>
