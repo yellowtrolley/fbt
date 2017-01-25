@@ -16,24 +16,25 @@
       {{#nav.item}}{{#nav.link-to "contact"}}Contact{{/nav.link-to}}{{/nav.item}}
     {{/navbar.nav}}
 
-    <button type="button" class="btn btn-default navbar-btn navbar-right" {{action 'openCheckout'}}>Shopping cart
-      <span class="badge">{{shoppingCart.items.length}}</span>
-    </button>
-
-    <ul class="nav navbar-nav">
-      {{#bs-dropdown tagName="li" as |dd|}}
-        {{#dd.toggle}}Admin <span class="caret"></span>{{/dd.toggle}}
-        {{#dd.menu as |ddm|}}
-          {{#ddm.item}}{{link-to 'Categories' 'admin.categories'}}{{/ddm.item}}
-          {{#ddm.item}}{{link-to 'Contacts' 'admin.contacts'}}{{/ddm.item}}
-          {{#ddm.item}}{{link-to 'Users' 'admin.users'}}{{/ddm.item}}
-        {{/dd.menu}}
-      {{/bs-dropdown}}
-    </ul>
-
-
     {{#if session.isAuthenticated}}
-        <button {{action "signOut"}} class='navbar-right btn btn-default navbar-btn'>Sign out</button>
+      {{#navbar.nav class="righ" as |nav|}}
+        {{#bs-dropdown tagName="li" as |dd|}}
+          {{#dd.toggle}}Admin <span class="caret"></span>{{/dd.toggle}}
+          {{#dd.menu as |ddm|}}
+            {{#ddm.item}} {{#nav.link-to "admin.categories"}}Categories{{/nav.link-to}} {{/ddm.item}}
+            {{#ddm.item}} {{#nav.link-to "admin.contacts"}}Contacts{{/nav.link-to}} {{/ddm.item}}
+            {{#ddm.item}} {{#nav.link-to "admin.users"}}Users{{/nav.link-to}} {{/ddm.item}}
+          {{/dd.menu}}
+        {{/bs-dropdown}}
+
+        {{#bs-button icon="glyphicon glyphicon-shopping-cart" onClick=(action "openCheckout")}}
+          Shopping cart<span class="badge">{{shoppingCart.items.length}}</span>
+        {{/bs-button}}
+
+        {{#bs-button icon="glyphicon glyphicon-off" onClick=(action "signOut")}}
+          Sign out
+        {{/bs-button}}
+      {{/navbar.nav}}
     {{/if}}
   {{/navbar.content}}
 {{/bs-navbar}}

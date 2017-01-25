@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
       newCategory.save().then(
         category => {
           this.set('newCategory', this.store.createRecord('category'));
+          console.log(category);
         },
         error => {
           console.error('Error from server:', error);

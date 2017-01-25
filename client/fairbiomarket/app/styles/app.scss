@@ -8,3 +8,8 @@ html { overflow-y: scroll; }
 .product-item {
   min-height: 150px;
 }
+
+.right {
+	float: right !important;
+	margin-right: -15px;
+}
