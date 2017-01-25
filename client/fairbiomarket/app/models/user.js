@@ -12,7 +12,11 @@ export default DS.Model.extend({
 	locked: DS.attr('boolean'),
 	photoId: DS.attr('string'),
 	phone: DS.attr('string'),
-	account_type: DS.attr('string'),
+	account_types: DS.attr(),
+
+	isAdmin: Ember.computed.filterBy('account_types', 'ADMIN'),
+	isSeller: Ember.computed.filterBy('account_types', 'SELLER'),
+	isBuyer: Ember.computed.filterBy('account_types', 'BUYER'),
 
 	isValidEmail: Ember.computed.match('email', /^.+@.+\..+$/),
 	isPasswordEnoughLong: Ember.computed.gte('password.length', 5),
