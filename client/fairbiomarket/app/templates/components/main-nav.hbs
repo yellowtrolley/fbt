@@ -29,6 +29,10 @@
           </ul>
         </li>
       </ul>
+
+       {{#if session.isAuthenticated}}
+          <button {{action "signOut"}} class='navbar-right btn btn-default navbar-btn'>Sign out</button>
+        {{/if}}
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

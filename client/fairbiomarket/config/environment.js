@@ -14,6 +14,11 @@ module.exports = function(environment) {
       storageBucket: 'ember-fb80a.appspot.com',
       messagingSenderId: '696305523162'
     },
+
+    torii: {
+      sessionServiceName: 'session'
+    },
+    
     // if using ember-cli-content-security-policy
     contentSecurityPolicy: {
       'script-src': "'self' 'unsafe-eval' apis.google.com",

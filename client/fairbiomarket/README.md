@@ -61,3 +61,4 @@ Specify what it takes to deploy your app.
  * activate() http://emberjs.com/api/classes/Ember.Route.html#method_activate
  * setupController(controller, model) http://emberjs.com/api/classes/Ember.Route.html#method_setupController
  * renderTemplate(controller, model) http://emberjs.com/api/classes/Ember.Route.html#method_renderTemplate
+
