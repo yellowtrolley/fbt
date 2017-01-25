@@ -17,6 +17,7 @@ Router.map(function() {
       this.route('new');
     });
     this.route('roles');
+    this.route('categories');
   });
 
   this.route('products', function() {

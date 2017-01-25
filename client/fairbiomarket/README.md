@@ -62,3 +62,6 @@ Specify what it takes to deploy your app.
  * setupController(controller, model) http://emberjs.com/api/classes/Ember.Route.html#method_setupController
  * renderTemplate(controller, model) http://emberjs.com/api/classes/Ember.Route.html#method_renderTemplate
 
+
+
+http://www.ember-bootstrap.com/

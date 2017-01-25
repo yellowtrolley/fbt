@@ -1,11 +1,10 @@
+
+{{main-nav session=session signOut='signOut'}}
+
 <div class="container">
-
-  {{main-nav session=session signOut='signOut'}}
-
     {{#if session.isAuthenticated}}
       {{outlet}}
     {{else}}
         {{login-form session=session signIn='signIn' signOut='signOut'}}
     {{/if}}
-
 </div>

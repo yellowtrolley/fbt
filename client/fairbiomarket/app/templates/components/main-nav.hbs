@@ -1,38 +1,39 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      {{#link-to 'index' class="navbar-brand"}}Ecool Market{{/link-to}}
-    </div>
+{{#bs-navbar type="inverse" class="navbar-fixed-top" as |navbar|}}
 
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav">
-        {{#nav-link-to 'products' data-toggle='collapse' data-target='#main-nav-bar.in'}}Products{{/nav-link-to}}
-        {{#nav-link-to 'about' data-toggle='collapse' data-target='#main-nav-bar.in'}}About{{/nav-link-to}}
-        {{#nav-link-to 'contact' data-toggle='collapse' data-target='#main-nav-bar.in'}}Contact{{/nav-link-to}}
-      </ul>
+  <div class="navbar-header">
+    {{#navbar.toggle}}
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    {{/navbar.toggle}}
+    {{link-to 'Ecool Market' 'index' class="navbar-brand"}}
+  </div>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            Admin<span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            {{#nav-link-to 'admin.invitations'}}Invitations{{/nav-link-to}}
-            {{#nav-link-to 'admin.contacts'}}Contacts{{/nav-link-to}}
-            {{#nav-link-to 'admin.users'}}Users{{/nav-link-to}}
-          </ul>
-        </li>
-      </ul>
+  {{#navbar.content}}
+    {{#navbar.nav as |nav|}}
+      {{#nav.item}}{{#nav.link-to "about"}}About{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "contact"}}Contact{{/nav.link-to}}{{/nav.item}}
+    {{/navbar.nav}}
 
-       {{#if session.isAuthenticated}}
-          <button {{action "signOut"}} class='navbar-right btn btn-default navbar-btn'>Sign out</button>
-        {{/if}}
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    <button type="button" class="btn btn-default navbar-btn navbar-right" {{action 'openCheckout'}}>Shopping cart
+      <span class="badge">{{shoppingCart.items.length}}</span>
+    </button>
+
+    <ul class="nav navbar-nav">
+      {{#bs-dropdown tagName="li" as |dd|}}
+        {{#dd.toggle}}Admin <span class="caret"></span>{{/dd.toggle}}
+        {{#dd.menu as |ddm|}}
+          {{#ddm.item}}{{link-to 'Categories' 'admin.categories'}}{{/ddm.item}}
+          {{#ddm.item}}{{link-to 'Contacts' 'admin.contacts'}}{{/ddm.item}}
+          {{#ddm.item}}{{link-to 'Users' 'admin.users'}}{{/ddm.item}}
+        {{/dd.menu}}
+      {{/bs-dropdown}}
+    </ul>
+
+
+    {{#if session.isAuthenticated}}
+        <button {{action "signOut"}} class='navbar-right btn btn-default navbar-btn'>Sign out</button>
+    {{/if}}
+  {{/navbar.content}}
+{{/bs-navbar}}

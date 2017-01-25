@@ -1,12 +1,9 @@
 @import "bootstrap";
+@import "ember-bootstrap/bootstrap";
 
-body {
-  padding-top: 20px;
-}
+body { padding-top: 70px; }
 
-html {
-  overflow-y: scroll;
-}
+html { overflow-y: scroll; }
 
 .product-item {
   min-height: 150px;

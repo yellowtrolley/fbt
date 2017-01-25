@@ -1,0 +1,41 @@
+<h1>Categories Admin Page</h1>
+
+<div class="well well-sm">
+	{{#bs-form  formLayout="inline" onSubmit=(action "addNewCategory") model=newCategory as |form|}}
+  	{{!#form.group validation=firstNameValidation}}
+  		{{form.element controlType="text" label="New category" placeholder="Category name" property="name"}}
+  	{{!/form.group}}
+    {{bs-button defaultText="Add" type="primary" buttonType="submit"}}
+  {{/bs-form}}
+</div>
+
+{{#if newCategory.isError}}
+  Error!!
+  {{#each newCategory.errors as |error|}}
+    {{error}}
+  {{/each}}
+{{/if}}
+
+<table class="table table-striped">
+  <caption>List of categories</caption>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each categories as |category|}}
+    <tr>
+      <td>{{category.id}}</td>
+      <td>{{category.name}}</td>
+      <td>
+        <button class="btn btn-xs btn-danger" {{action 'deleteCategory' category}}>Del</button>
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+Number of categories: {{categories.length}}
