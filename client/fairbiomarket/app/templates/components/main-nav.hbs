@@ -32,10 +32,10 @@
           Shopping cart<span class="badge">{{shoppingCart.items.length}}</span>
         {{/bs-button}}
 
-        {{#bs-button icon="glyphicon glyphicon-off" onClick=(action "signOut")}}
-          Sign out
-        {{/bs-button}}
+        {{#bs-button icon="glyphicon glyphicon-off" onClick=(action "signOut")}}Sign out{{/bs-button}}
       {{/navbar.nav}}
+    {{else}}
+      {{login-form session=session signIn='signIn'}} {{!   register='signOut' }}
     {{/if}}
   {{/navbar.content}}
 {{/bs-navbar}}

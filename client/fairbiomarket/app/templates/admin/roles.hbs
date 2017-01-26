@@ -1,1 +1,5 @@
-{{outlet}}
+{{#if session.isAuthenticated}}
+	{{outlet}}
+{{else}}
+    Que haces aqui???
+{{/if}}

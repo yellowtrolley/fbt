@@ -1,10 +1,5 @@
-
-{{main-nav session=session signOut='signOut'}}
+{{main-nav session=session signOut='signOut' signIn='signIn' openCheckout='openCheckout'}}
 
 <div class="container">
-    {{#if session.isAuthenticated}}
-      {{outlet}}
-    {{else}}
-        {{login-form session=session signIn='signIn' signOut='signOut'}}
-    {{/if}}
+	{{outlet}}
 </div>

@@ -9,21 +9,17 @@ export default Ember.Controller.extend({
   isValid: Ember.computed.notEmpty('itemName'),
   isDisabled: Ember.computed.not('isValid'),
 
-
-
 	itemNameChanged: Ember.observer('itemName', function() {
   	console.log('observer is called', this.get('itemName'));	
 	}),
 
 
 	actions: {
-    searchItems() {
-      const itemName = this.get('itemName');
-
+    searchItems(itemName) {
       const matches = this.store.createRecord('item', { name: itemName });
       // GET to /item?filter[name]=itemName
       this.store.query('item', { filter: { name: itemName } }).then(function(data) {
-        results = data;
+        this.set('results', data);
       });
       
       // newInvitation.save().then((response) => {
@@ -31,6 +27,11 @@ export default Ember.Controller.extend({
       //   this.set('itemName', '');
       // });
 
+    },
+
+    addToShoppingCart(product) {
+      // `shoppingCart` injected as a Service in initializer, so we can call it with this syntax
+      this.shoppingCart.add(product);
     }
   }
 
