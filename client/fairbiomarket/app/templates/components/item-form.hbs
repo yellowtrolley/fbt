@@ -1,26 +1,27 @@
-<div class="form-horizontal">
-  <div class="form-group has-feedback {{if item.isValid 'has-success'}}">
-    <label class="col-sm-2 control-label">Name*</label>
-    <div class="col-sm-10">
-      {{input type="text" value=item.name class="form-control" placeholder="The name of the item"}}
-      {{#if item.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Description</label>
-    <div class="col-sm-10">
-      {{input type="text" value=item.description class="form-control" placeholder="The description of the item"}}
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Price</label>
-    <div class="col-sm-10">
-      {{input type="text" value=item.price class="form-control" placeholder="The price of the item"}}
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default" {{action 'buttonClicked' item}} disabled={{unless item.isValid true}}>{{buttonLabel}}</button>
-    </div>
-  </div>
-</div>
+{{#bs-form formLayout="vertical" action="buttonClicked" model=item as |form|}}
+  {{form.element controlType="text" label="Item name" placeholder="Item name" property="name"}}
+  {{form.element controlType="number" label="Unit price" placeholder="Unit price" property="price"}}
+{{#form.element label="Categories" property="categories" useIcons=false as |el|}}
+  
+    {{#power-select-multiple
+        options=categories
+        selected=item.categories
+        placeholder="Select some categories..."
+        onchange=(action (mut item.categories))
+        as |category|
+    }}
+      {{category.name}}
+    {{/power-select-multiple}}
+{{/form.element}}
+  {{form.element controlType="text" label="Description" placeholder="Description" property="description"}}
+  {{form.element controlType="textarea" label="Long description" placeholder="Long description" property="long_description"}}
+
+  {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "buttonClicked" item)}}
+{{/bs-form}}
+
+{{#if item.isError}}
+  Error!!
+  {{#each item.errors as |error|}}
+    {{error}}
+  {{/each}}
+{{/if}}

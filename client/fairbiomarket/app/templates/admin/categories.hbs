@@ -1,8 +1,8 @@
 <h1>Categories Admin Page</h1>
 
 <div class="well well-sm">
-	{{#bs-form  formLayout="inline" onSubmit=(action "addNewCategory") model=newCategory as |form|}}
-  	{{!#form.group validation=firstNameValidation}}
+	{{#bs-form formLayout="inline" onSubmit=(action "addNewCategory") model=newCategory as |form|}}
+  	{{!form.group validation=firstNameValidation}}
   		{{form.element controlType="text" label="New category" placeholder="Category name" property="name"}}
   	{{!/form.group}}
     {{bs-button defaultText="Add" type="primary" buttonType="submit"}}

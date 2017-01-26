@@ -12,6 +12,7 @@ export default Ember.Route.extend({
 
     controller.set('title', 'Create a new item');
     controller.set('buttonLabel', 'Add');
+    controller.set('categories', this.store.findAll('category'));
   },
 
   // For setting a non-default template location, we can use the renderTemplate hook.
@@ -39,6 +40,10 @@ export default Ember.Route.extend({
           transition.abort();
         }
       }
+    },
+
+    createCategory(name) {
+      this.store.createRecord('category', {name: name});
     }
   }
 });
