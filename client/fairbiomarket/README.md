@@ -65,3 +65,10 @@ Specify what it takes to deploy your app.
 
 
 http://www.ember-bootstrap.com/
+
+Deploy your app using Firebase Hosting service
+
+$ npm install -g firebase-tools
+$ ember build --prod
+$ firebase login
+$ firebase init
