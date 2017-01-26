@@ -3,26 +3,26 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model() {
-    return this.store.createRecord('product');
+    return this.store.createRecord('item');
   },
 
   // To set controller params in a Route, we can use the setupController hook.
   setupController: function (controller, model) {
     this._super(controller, model);
 
-    controller.set('title', 'Create a new product');
+    controller.set('title', 'Create a new item');
     controller.set('buttonLabel', 'Add');
   },
 
   // For setting a non-default template location, we can use the renderTemplate hook.
   renderTemplate() {
-    this.render('products/form');
+    this.render('item/form');
   },
 
 
   actions: {
-    saveProduct(newProduct) {
-      newProduct.save().then(() => this.transitionTo('products'));
+    saveItem(newItem) {
+      newItem.save().then(() => this.transitionTo('sell'));
     },
 
     willTransition(transition) {

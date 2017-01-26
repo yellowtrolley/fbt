@@ -18,6 +18,7 @@
 
     {{#if session.isAuthenticated}}
       {{#navbar.nav class="righ" as |nav|}}
+        {{#nav.item}}{{#nav.link-to "sell"}}Sell{{/nav.link-to}}{{/nav.item}}
         {{#bs-dropdown tagName="li" as |dd|}}
           {{#dd.toggle}}Admin <span class="caret"></span>{{/dd.toggle}}
           {{#dd.menu as |ddm|}}

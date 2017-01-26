@@ -26,14 +26,22 @@
   </thead>
   <tbody>
   {{#each categories as |category|}}
-    <tr>
-      <td>{{category.name}}</td>
-      <td>
-        <button class="btn btn-xs btn-danger" {{action 'deleteCategory' category}}>Del</button>
-      </td>
-    </tr>
+    {{#unless category.isNew}}
+      <tr>
+        <td {{action 'editCategory' category}}>
+          {{#if category.isEditing}}
+            {{input value=category.name}}
+            {{#bs-button onClick=(action "updateCategory" category)}}Save{{/bs-button}}
+          {{else}}
+            {{category.name}}
+          {{/if}}
+        </td>
+        <td>
+          {{#bs-button class="btn btn-xs btn-danger" onClick=(action "deleteCategory" category)}}Del{{/bs-button}}
+          {{#bs-button class="btn btn-xs btn-success" onClick=(action "editCategory" category)}}Edit{{/bs-button}}
+        </td>
+      </tr>
+    {{/unless}}
   {{/each}}
   </tbody>
 </table>
-
-Number of categories: {{categories.length}}

@@ -16,6 +16,16 @@ export default Ember.Controller.extend({
         });
     },
 
+    editCategory(category) {
+      category.set('isEditing', true);
+    },
+
+    updateCategory(category) {
+      category.save().then(
+        category => category.set('isEditing', false)
+      );
+    },
+
     deleteCategory(category) {
       category.destroyRecord();
     }
