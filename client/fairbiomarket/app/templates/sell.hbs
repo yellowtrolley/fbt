@@ -10,10 +10,10 @@
 	<div class="row">
 	  {{#each model as |item|}}
 	    <div class="col-md-4">
-	      {{#item-item item=item}}
+	      {{#item/item-item item=item}}
 	        {{#link-to 'item.edit' item.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
 	        <button class="btn btn-danger btn-xs" {{action 'deleteItem' item}}>Delete</button>
-	      {{/item-item}}
+	      {{/item/item-item}}
 	    </div>
 	  {{/each}}
 	</div>

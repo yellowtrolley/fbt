@@ -2,12 +2,12 @@
 
 <div class="row">
   <div class="col-md-6">
-    {{item-form item=model buttonLabel=buttonLabel action='saveItem' categories=categories}}
+    {{item/item-form item=model buttonLabel=buttonLabel action='saveItem' categories=categories}}
   </div>
 
   <div class="col-md-4">
-    {{#item-item item=model}}
+    {{#item/item-item item=model}}
       <br/>
-    {{/item-item}}
+    {{/item/item-item}}
   </div>
 </div>

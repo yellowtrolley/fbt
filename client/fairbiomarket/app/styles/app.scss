@@ -6,14 +6,18 @@ html { overflow-y: scroll; }
 body { padding-top: 70px; }
 
 .navbar-nav {
-    float:none;
-    margin:0 auto;
-    text-align: center;
+  float:none;
+  margin:0 auto;
+  text-align: center;
+}
+
+.navbar-brand img {
+	display: inline-block;
 }
 
 .navbar-firstnav > li {
-    display: inline-block;
-    float:none;
+  display: inline-block;
+  float:none;
 }
 
 .navbar-firstnav > li > a > h2 {

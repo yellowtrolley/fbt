@@ -7,17 +7,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     {{/navbar.toggle}}
-    {{link-to 'Ecool Market' 'index' class="navbar-brand"}}
+    {{#link-to 'index' class="navbar-brand"}}<img src="images/arbolito.gif" width="40" height="40" />{{/link-to}}
   </div>
 
   {{#navbar.content}}
-   {{!--  {{#navbar.nav as |nav|}}
-      {{#nav.item}}{{#nav.link-to "about"}}About{{/nav.link-to}}{{/nav.item}}
-      {{#nav.item}}{{#nav.link-to "contact"}}Contact{{/nav.link-to}}{{/nav.item}}
-    {{/navbar.nav}} --}}
+    {{#navbar.nav class="navbar-firstnav" as |nav|}}
 
-    {{#if session.isAuthenticated}}
-      {{#navbar.nav class="navbar-firstnav" as |nav|}}
+      {{#if session.isAuthenticated}}
+      
         {{#nav.item}} {{#link-to "index"}}<h2>Buy</h2>{{/link-to}} {{/nav.item}}
         {{#nav.item}} {{#link-to "sell"}}<h2>Sell</h2>{{/link-to}} {{/nav.item}}
       
@@ -30,16 +27,22 @@
           {{/dd.menu}}
         {{/bs-dropdown}}
 
-        {{#nav.item class="pull-right"}}
+        {{#nav.item class="navbar-right"}}
           {{#bs-button class="navbar-btn" icon="glyphicon glyphicon-shopping-cart" onClick=(action "openCheckout")}}
             Shopping cart<span class="badge">{{shoppingCart.items.length}}</span>
           {{/bs-button}}
 
           {{#bs-button class="navbar-btn" icon="glyphicon glyphicon-off" onClick=(action "signOut")}}Sign out{{/bs-button}}
         {{/nav.item}}
-      {{/navbar.nav}}
-    {{else}}
-      {{login-form session=session signIn='signIn'}} {{!   register='signOut' }}
-    {{/if}}
+      
+      {{else}}
+
+        {{#nav.item class="navbar-right"}}
+          {{login-form session=session signIn='signIn'}} {{!   register='signOut' }}
+        {{/nav.item}}
+
+      {{/if}}
+
+    {{/navbar.nav}}
   {{/navbar.content}}
 {{/bs-navbar}}
