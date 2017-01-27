@@ -12,17 +12,38 @@
       </div>
     </div>
 
+    <div class="row">
+      {{#each results as |item|}}
+        <div class="col-md-4">
+          {{#item-item item=item}}
+            <button class="btn btn-success btn-sm" {{action 'addToShoppingCart' item}}>Add to Cart</button>
+          {{/item-item}}
+        </div>
+      {{/each}}
+    </div>
+
     {{#if responseMessage}}
-
-  {{! TODO List of items }}
-  <button class="btn btn-default btn-sm pull-right" {{action 'addToShoppingCart' product}}>Add to Cart</button>
-
       <div class="alert alert-success">{{responseMessage}}</div>
     {{/if}}
-
   </div>
   
 {{else}}
-    Welcome
+
+  <div class="jumbotron text-center">
+    <p>Mensaje de bienvenida. Explicación de que va esta web</p>
+    <div class="col-xs-6">
+        <p class="lead">Register now for <span class="text-success">FREE</span></p>
+        <ul class="list-unstyled" style="line-height: 2">
+            <li><span class="fa fa-check text-success"></span> See all your orders</li>
+            <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+            <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+            <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+            <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+            <li><a href="/read-more/"><u>Read more</u></a></li>
+        </ul>
+        <p><a href="/new-customer/" class="btn btn-info btn-block">Link para registrarse</a></p>
+    </div>
+  </div>
+
 {{/if}}
 

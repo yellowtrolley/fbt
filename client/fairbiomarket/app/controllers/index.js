@@ -16,10 +16,10 @@ export default Ember.Controller.extend({
 
 	actions: {
     searchItems(itemName) {
-      const matches = this.store.createRecord('item', { name: itemName });
       // GET to /item?filter[name]=itemName
-      this.store.query('item', { filter: { name: itemName } }).then(function(data) {
-        this.set('results', data);
+      this.store.query('item', { filter: { name: itemName } }).then(response => {
+        this.set('results', response);
+        console.log('results: ' + this.get('results'));
       });
       
       // newInvitation.save().then((response) => {

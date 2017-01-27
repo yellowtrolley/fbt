@@ -1,4 +1,4 @@
-{{#bs-navbar type="inverse" class="navbar-fixed-top" as |navbar|}}
+{{#bs-navbar type="" class="navbar-fixed-top" as |navbar|}}
 
   <div class="navbar-header">
     {{#navbar.toggle}}
@@ -11,15 +11,17 @@
   </div>
 
   {{#navbar.content}}
-    {{#navbar.nav as |nav|}}
+   {{!--  {{#navbar.nav as |nav|}}
       {{#nav.item}}{{#nav.link-to "about"}}About{{/nav.link-to}}{{/nav.item}}
       {{#nav.item}}{{#nav.link-to "contact"}}Contact{{/nav.link-to}}{{/nav.item}}
-    {{/navbar.nav}}
+    {{/navbar.nav}} --}}
 
     {{#if session.isAuthenticated}}
-      {{#navbar.nav class="righ" as |nav|}}
-        {{#nav.item}}{{#nav.link-to "sell"}}Sell{{/nav.link-to}}{{/nav.item}}
-        {{#bs-dropdown tagName="li" as |dd|}}
+      {{#navbar.nav class="navbar-firstnav" as |nav|}}
+        {{#nav.item}} {{#link-to "index"}}<h2>Buy</h2>{{/link-to}} {{/nav.item}}
+        {{#nav.item}} {{#link-to "sell"}}<h2>Sell</h2>{{/link-to}} {{/nav.item}}
+      
+        {{#bs-dropdown  tagName="li" as |dd|}}
           {{#dd.toggle}}Admin <span class="caret"></span>{{/dd.toggle}}
           {{#dd.menu as |ddm|}}
             {{#ddm.item}} {{#nav.link-to "admin.categories"}}Categories{{/nav.link-to}} {{/ddm.item}}
@@ -28,11 +30,13 @@
           {{/dd.menu}}
         {{/bs-dropdown}}
 
-        {{#bs-button icon="glyphicon glyphicon-shopping-cart" onClick=(action "openCheckout")}}
-          Shopping cart<span class="badge">{{shoppingCart.items.length}}</span>
-        {{/bs-button}}
+        {{#nav.item class="pull-right"}}
+          {{#bs-button class="navbar-btn" icon="glyphicon glyphicon-shopping-cart" onClick=(action "openCheckout")}}
+            Shopping cart<span class="badge">{{shoppingCart.items.length}}</span>
+          {{/bs-button}}
 
-        {{#bs-button icon="glyphicon glyphicon-off" onClick=(action "signOut")}}Sign out{{/bs-button}}
+          {{#bs-button class="navbar-btn" icon="glyphicon glyphicon-off" onClick=(action "signOut")}}Sign out{{/bs-button}}
+        {{/nav.item}}
       {{/navbar.nav}}
     {{else}}
       {{login-form session=session signIn='signIn'}} {{!   register='signOut' }}

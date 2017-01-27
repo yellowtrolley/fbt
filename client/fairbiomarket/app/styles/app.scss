@@ -2,11 +2,21 @@
 @import "ember-bootstrap/bootstrap";
 @import "ember-power-select";
 
+html { overflow-y: scroll; }
 body { padding-top: 70px; }
 
-html { overflow-y: scroll; }
+.navbar-nav {
+    float:none;
+    margin:0 auto;
+    text-align: center;
+}
 
-// .right {
-// 	float: right !important;
-// 	margin-right: -15px;
-// }
+.navbar-firstnav > li {
+    display: inline-block;
+    float:none;
+}
+
+.navbar-firstnav > li > a > h2 {
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
