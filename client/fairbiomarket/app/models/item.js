@@ -10,6 +10,7 @@ export default DS.Model.extend({
 	rating: DS.attr('number'),
   seller: DS.belongsTo('user'),
   categories: DS.hasMany('category'),
+  images: DS.attr(),
 
 	isEditing: false,
   isValid: Ember.computed.notEmpty('name'),

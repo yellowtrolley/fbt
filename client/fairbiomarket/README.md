@@ -64,11 +64,16 @@ Specify what it takes to deploy your app.
 
 
 
-http://www.ember-bootstrap.com/
+## http://www.ember-bootstrap.com/
 
-Deploy your app using Firebase Hosting service
+## Deploy your app using Firebase Hosting service
 
-$ npm install -g firebase-tools
-$ ember build --prod
-$ firebase login
-$ firebase init
+ * $ npm install -g firebase-tools
+ * $ ember build --prod
+ * $ firebase login
+ * $ firebase init
+
+
+## File Upload with ember-file-upload
+
+ * https://github.com/tim-evans/ember-file-upload

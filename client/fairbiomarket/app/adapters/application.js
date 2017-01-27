@@ -1,11 +1,11 @@
-// import DS from 'ember-data';
-// 
-// export default DS.JSONAPIAdapter.extend({
-//   namespace: 'api'
-// });
+import DS from 'ember-data';
 
-
-import FirebaseAdapter from 'emberfire/adapters/firebase';
-
-export default FirebaseAdapter.extend({
+export default DS.JSONAPIAdapter.extend({
+  namespace: 'api'
 });
+
+
+// import FirebaseAdapter from 'emberfire/adapters/firebase';
+
+// export default FirebaseAdapter.extend({
+// });
