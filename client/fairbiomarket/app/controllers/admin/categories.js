@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  // If you haven't mapped this properties in setupController, you can alias them here
 	categories: Ember.computed.alias('model.categories'),
 	newCategory: Ember.computed.alias('model.newCategory'),
 

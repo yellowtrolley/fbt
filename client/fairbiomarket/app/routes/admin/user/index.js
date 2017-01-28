@@ -10,9 +10,9 @@ export default Ember.Route.extend({
     });
   },
 
-	// you can skip this step. If you skip, you have to use model.libraries, model.books properties in your controller and in your template.
-  // setupController(controller, model) {
-  //   controller.set('users', model.users);
-  //   controller.set('roles', model.roles);
-  // }
+	// you can skip this step. If you skip, you have to use model.users, model.roles properties in your controller and in your template.
+  setupController(controller, model) {
+    controller.set('users', model.users);
+    controller.set('roles', model.roles);
+  }
 });

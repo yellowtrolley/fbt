@@ -14,7 +14,7 @@ Router.map(function() {
   this.route('admin', function() {
     this.route('invitations');
     this.route('contacts');
-    this.route('users', function() {
+    this.route('user', function() {
       this.route('new');
     });
     this.route('roles');

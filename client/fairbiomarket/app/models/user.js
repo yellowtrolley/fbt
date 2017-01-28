@@ -10,7 +10,7 @@ export default DS.Model.extend({
 	activation_key: DS.attr('string'),
 	enabled: DS.attr('boolean'),
 	locked: DS.attr('boolean'),
-	photoId: DS.attr('string'),
+	photo_id: DS.attr('string'),
 	phone: DS.attr('string'),
 	account_types: DS.attr(),
 

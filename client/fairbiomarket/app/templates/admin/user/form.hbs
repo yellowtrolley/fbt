@@ -1,0 +1,25 @@
+<h2>{{title}}</h2>
+
+{{#bs-form formLayout="vertical" action="save" model=user as |form|}}
+  {{form.element controlType="email" label="email" placeholder="email" property="email"}}
+  {{form.element controlType="text" label="password" placeholder="password" property="password"}}
+  {{#form.element label="roles" property="roles" useIcons=false as |el|}}
+    
+      {{#power-select-multiple
+          options=roles
+          selected=user.roles
+          placeholder="Select roles..."
+          onchange=(action (mut user.roles))
+          as |role|
+      }}
+        {{role.name}}
+      {{/power-select-multiple}}
+  {{/form.element}}
+
+
+  {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "save" user)}}
+{{/bs-form}}
+
+
+        <h3 class="panel-title">{{user.email}}</h3>
+        <h3 class="panel-title">{{user.password}}</h3>

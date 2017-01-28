@@ -7,6 +7,12 @@
 	  <div class="col-md-4">{{number-box title="Users" number=users.length}}</div>
 	</div>
 	
+	{{#each users as |user|}}
+      {{user.email}}
+   {{/each}}
+
+	{{outlet}}
 {{else}}
     Que haces aqui???
 {{/if}}
+

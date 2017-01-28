@@ -1,25 +1,25 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	 model() {
+	model() {
     return this.store.createRecord('user');
   },
 
-  setupController: function (controller, model) {
-    this._super(controller, model);
+  // setupController: function (controller, model) {
+  //   this._super(controller, model);
 
-    controller.set('title', 'Create a new user');
-    controller.set('buttonLabel', 'Add');
-  },
+  //   controller.set('title', 'Create a new user');
+  //   controller.set('buttonLabel', 'Add');
+  // },
 
   renderTemplate() {
-    this.render('admin/users/form');
+    this.render('admin/user/form');
   },
 
   actions: {
-    saveUser(newUser) {
-      newUser.save().then(() => this.transitionTo('users'));
-    },
+    // saveUser(newUser) {
+    //   newUser.save().then(() => this.transitionTo('admin/user'));
+    // },
 
     willTransition(transition) {
       let model = this.controller.get('model');
