@@ -45,7 +45,7 @@ export default Ember.Route.extend({
 
   actions: {
     uploadImage(file) {
-      // get(this, 'uploadPhoto').perform(file);
+      console.log(file);
     },
 
     saveItem(newItem) {
