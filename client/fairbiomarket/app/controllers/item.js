@@ -1,16 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	actions: {
-    addItem() {
-      const name = this.get('name');
-      const description = this.get('description');
-      const price = this.get('price');
-      const newItem = this.store.createRecord('item', { name: name, description: description, price: price });
+	/*actions: {
+    handleFileAsDataURL(file) {
+      console.log(file);
       
-      newItem.save().then((response) => {
-        this.set('responseMessage', `Item: ${response.get('name')} added`);
+      const data = new FormData();
+      data.append(`value`, file);
+      
+      const fileId = Ember.$.ajax({
+        data,
+        method: `POST`,
+        cache: false,
+        processData: false,
+        contentType: false,
+        url: `${config.apiHost}/image`,
       });
+
+      console.log(fileId);
     }
-  }
+  }*/
 });

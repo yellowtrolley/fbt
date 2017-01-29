@@ -20,31 +20,9 @@ export default Ember.Route.extend({
     this.render('item/form');
   },
 
-  // uploadPhoto: task(function * (file) {
-  //   try {
-  //     let product = this.modelFor('product');
-  //     let photo = this.store.createRecord('photo', {
-  //       product,
-  //       filename: get(file, 'name'),
-  //       filesize: get(file, 'size')
-  //     });
-
-  //     file.read().then(function (url) {
-  //       if (get(photo, 'url') == null) {
-  //         set(photo, 'url', url);
-  //       }
-  //     });
-
-  //     let response = yield file.upload('/api/images/upload');
-  //     set(photo, 'url', response.headers.Location);
-  //     yield photo.save();
-  //   } catch {
-  //     photo.rollback();
-  //   }
-  // }).maxConcurrency(3).enqueue(),
-
   actions: {
     uploadImage(file) {
+      // get(this, 'uploadPhoto').perform(file);
       console.log(file);
     },
 
