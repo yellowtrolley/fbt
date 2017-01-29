@@ -12,7 +12,7 @@ export default Ember.Route.extend({
       const image = new Image();
       image.onload = function() {
             resolve();
-      }
+      };
     });
 
   },

@@ -26,7 +26,7 @@ export default function() {
 
   this.namespace = '/api';
 
-  this.get('/categories', (schema, request) => {
+  this.get('/categories', (schema/*, request*/) => {
     return schema.categories.all();
   });
   this.get('/categories');
