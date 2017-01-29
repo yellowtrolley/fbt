@@ -4,11 +4,23 @@
     </div>
     <div class="panel-body">
         <p>Price: {{item.price}}</p>
+        
         <p>Description: {{item.description}}</p>
+        
         <p>Categories:
             <ul>
                 {{#each item.categories as |cat|}}
                     <li>{{cat.name}}</li>
+                {{/each}}
+            </ul>
+        </p>
+
+        <p>Images:
+            <ul>
+                {{#each item.imageids as |img|}}
+                    <li>
+                        <img src="images/{{img}}" width="400"/>
+                    </li>
                 {{/each}}
             </ul>
         </p>

@@ -23,8 +23,9 @@
   {{form.element controlType="text" label="Description" placeholder="Description" property="description"}}
   {{form.element controlType="textarea" label="Long description" placeholder="Long description" property="long_description"}}
 
-
-  {{file-upload url="/images"}} 
+  {{#form.element label="Images" property="image_ids" }}
+    {{file-upload url="/images" model=item property="imageids"}}
+  {{/form.element}}
 
   {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "buttonClicked" item)}}
 {{/bs-form}}

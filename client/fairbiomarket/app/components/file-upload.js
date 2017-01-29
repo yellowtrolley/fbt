@@ -5,6 +5,10 @@ export default EmberUploader.FileField.extend({
 	multiple: true,
 	// url: '/files', // passed as parameter on tag. Eg. /image
 
+	attributeBindings: [
+    'handleDataFn', 'model', 'property'
+	],
+
   filesDidChange: function(files) {
     const uploader = EmberUploader.Uploader.create({
       url: this.get('url'),
@@ -13,9 +17,17 @@ export default EmberUploader.FileField.extend({
 
     if (!Ember.isEmpty(files)) {
       // this second argument is optional and can to be sent as extra data with the upload
-      const fileId = uploader.upload(files/*, { whateverObject }*/).then(data => {
-		  // Handle success
+      uploader.upload(files/*, { whateverObject }*/).then(data => {
+		  	// Array of file ids
+		  	
+		  	const model = this.get('model');
+		  	const property = this.get('property');
+		  	
       	console.log(data);
+		  	console.log(model);
+		  	console.log(property);
+
+		  	model.set(property, data);
 			}, error => {
 			  console.log(error);
 			});
@@ -28,7 +40,7 @@ export default EmberUploader.FileField.extend({
 		});
 
 		uploader.on('didUpload', e => {
-		  console.log('uploaded!');
+		  console.log('uploaded!' + e);
 		});
 
 		uploader.on('didError', (jqXHR, textStatus, errorThrown) => {
