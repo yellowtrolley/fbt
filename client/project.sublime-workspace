@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"pro",
+				"property"
+			],
+			[
+				"file",
+				"fileIds"
+			],
+			[
 				"err",
 				"errorThrown"
 			],
@@ -77,18 +85,32 @@
 	},
 	"file_history":
 	[
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/item/new.hbs",
+		"/home/pablo/git/photodb/src/main/java/org/pgg/photodb/web/PhotoController.java",
+		"/home/pablo/proyectos/photoDB/photodb/src/main/webapp/WEB-INF/templates/home.html",
+		"/home/pablo/proyectos/photoDB/photodb/src/main/webapp/WEB-INF/templates/photos/list.html",
+		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/web/SpeciesController.java",
+		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/web/PhotoController.java",
+		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/repos/FileRepo.java",
+		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/domain/Photo.java",
+		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/service/impl/PhotoServiceImpl.java",
+		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/service/impl/FileServiceImpl.java",
+		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/service/FileService.java",
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/routes/item/new.js",
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/components/file-upload.js",
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/item/form.hbs",
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/package.json",
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/components/file-upload.hbs",
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/controllers/item/new.js",
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/components/item/new.hbs",
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/node_modules/ember-uploader/addon/uploaders.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/components/image-uploader/template.hbs",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/components/image-uploader/component.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/components/nav/main-nav.hbs",
-		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/item/form.hbs",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/components/item/item-form.hbs",
-		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/controllers/item/new.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/components/x-file-input.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/controllers/item.js",
-		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/routes/item/new.js",
-		"/home/pablo/git/fairbiomarket/client/fairbiomarket/package.json",
 		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/WebConfig.java",
-		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/service/impl/FileServiceImpl.java",
 		"/home/pablo/proyectos/photoDB/photodb/src/main/java/org/pgg/photodb/MongoDBConfig.java",
 		"/home/pablo/Documents/ownCloud/projects/Findfellas/findfellas/src/main/java/com/anecico/findfellas/RunAfterStart.java",
 		"/home/pablo/Documents/ownCloud/projects/Findfellas/findfellas/src/main/java/com/anecico/findfellas/repo/FileRepository.java",
@@ -126,7 +148,6 @@
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/components/item-form.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/components/item-form.hbs",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/routes/sell.js",
-		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/item/new.hbs",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/item/index.hbs",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/item/buy.hbs",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/products/form.hbs",
@@ -156,7 +177,7 @@
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -171,6 +192,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"img",
+			"imageIds",
+			"image_ids",
+			"saveItem",
 			"addItem",
 			"uploadImage",
 			"photos",
@@ -209,6 +234,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"save",
 			"images",
 			"user",
 			"item",
@@ -224,7 +250,7 @@
 	},
 	"incremental_find":
 	{
-		"height": 30.0
+		"height": 33.0
 	},
 	"input":
 	{
@@ -260,7 +286,7 @@
 	"pinned_build_system": "",
 	"replace":
 	{
-		"height": 74.0
+		"height": 80.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -270,7 +296,7 @@
 		"selected_items":
 		[
 			[
-				"pack",
+				"packa",
 				"package.json"
 			],
 			[
@@ -278,12 +304,20 @@
 				"package.json"
 			],
 			[
-				"router",
-				"app/router.js"
+				"",
+				"app/templates/item/new.hbs"
 			],
 			[
-				"",
-				"app/torii-providers/test-provider.js"
+				"emberuploader",
+				"node_modules/ember-uploader/addon/uploaders.js"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"router",
+				"app/router.js"
 			],
 			[
 				"nav",
