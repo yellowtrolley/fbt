@@ -24,6 +24,7 @@
   {{form.element controlType="textarea" label="Long description" placeholder="Long description" property="long_description"}}
 
 
+  {{file-upload url="/images"}} 
 
   {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "buttonClicked" item)}}
 {{/bs-form}}
