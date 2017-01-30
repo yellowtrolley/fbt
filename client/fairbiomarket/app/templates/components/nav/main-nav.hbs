@@ -22,7 +22,7 @@
           {{#dd.toggle}}Admin <span class="caret"></span>{{/dd.toggle}}
           {{#dd.menu as |ddm|}}
             {{#ddm.item}} {{#nav.link-to "admin.categories"}}Categories{{/nav.link-to}} {{/ddm.item}}
-            {{#ddm.item}} {{#nav.link-to "admin.contacts"}}Contacts{{/nav.link-to}} {{/ddm.item}}
+            {{!-- {{#ddm.item}} {{#nav.link-to "admin.contacts"}}Contacts{{/nav.link-to}} {{/ddm.item}} --}}
             {{#ddm.item}} {{#nav.link-to "admin.users"}}Users{{/nav.link-to}} {{/ddm.item}}
           {{/dd.menu}}
         {{/bs-dropdown}}
@@ -42,7 +42,9 @@
         {{/nav.item}}
 
       {{/if}}
-
+        {{#nav.item class="navbar-right"}}
+          {{language-select}}
+        {{/nav.item}}
     {{/navbar.nav}}
   {{/navbar.content}}
 {{/bs-navbar}}
