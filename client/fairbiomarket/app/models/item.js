@@ -9,7 +9,7 @@ export default DS.Model.extend({
 	price: DS.attr('number'),
 	rating: DS.attr('number'),
   seller: DS.belongsTo('user'),
-  categories: DS.hasMany('category'),
+  categories: DS.hasMany('category', { inverse: null }),
   imageids: DS.attr(),
 
 	isEditing: false,

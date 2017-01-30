@@ -4,7 +4,7 @@ import Ember from 'ember';
 export default DS.Model.extend({
 	email: DS.attr('string'),
 	activation_date: DS.attr('date'),
-	roles: DS.hasMany('roles'),
+	roles: DS.hasMany('roles', { inverse: null }),
 	password: DS.attr('string'),
   name: DS.attr('string'),
 	activation_key: DS.attr('string'),
