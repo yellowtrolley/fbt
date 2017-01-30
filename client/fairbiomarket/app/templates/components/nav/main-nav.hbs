@@ -27,12 +27,16 @@
           {{/dd.menu}}
         {{/bs-dropdown}}
 
+        
+
         {{#nav.item class="navbar-right"}}
           {{#bs-button class="navbar-btn" icon="glyphicon glyphicon-shopping-cart" onClick=(action "openCheckout")}}
             Shopping cart<span class="badge">{{shoppingCart.items.length}}</span>
           {{/bs-button}}
 
           {{#bs-button class="navbar-btn" icon="glyphicon glyphicon-off" onClick=(action "signOut")}}Sign out{{/bs-button}}
+
+          {{language-select}}
         {{/nav.item}}
       
       {{else}}
@@ -42,9 +46,7 @@
         {{/nav.item}}
 
       {{/if}}
-        {{#nav.item class="navbar-right"}}
-          {{language-select}}
-        {{/nav.item}}
+
     {{/navbar.nav}}
   {{/navbar.content}}
 {{/bs-navbar}}
