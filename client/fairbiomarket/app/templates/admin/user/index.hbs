@@ -7,9 +7,49 @@
 	  <div class="col-md-4">{{number-box title="Users" number=users.length}}</div>
 	</div>
 	
-	{{#each users as |user|}}
-      {{user.email}}
-   {{/each}}
+	<div class="panel panel-default">
+	  <div class="panel-body">
+  		{{#link-to 'admin.user.new' class='btn btn-info pull-right'}}Add new user{{/link-to}}
+	  </div>
+	</div>
+
+  <table class="table table-striped">
+    <caption>List of users</caption>
+    <thead>
+    <tr>
+      <th>Email</th>
+      <th>Roles</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each users as |user|}}
+      {{#unless user.isNew}}
+        <tr>
+          <td {{action 'editUser' user}}>
+            {{#if user.isEditing}}
+              {{input value=user.email}}
+              {{#bs-button onClick=(action "updateUser" user)}}Save{{/bs-button}}
+            {{else}}
+              {{user.email}}
+            {{/if}}
+          </td>
+
+          <td>
+          	{{#each user.roles as |role|}}
+				      {{role.name}}
+				   	{{/each}}
+          </td>
+
+          <td>
+            {{#bs-button class="btn btn-xs btn-danger" onClick=(action "deleteUser" user)}}Del{{/bs-button}}
+            {{#bs-button class="btn btn-xs btn-success" onClick=(action "editUser" user)}}Edit{{/bs-button}}
+          </td>
+        </tr>
+      {{/unless}}
+    {{/each}}
+    </tbody>
+  </table>
 
 	{{outlet}}
 {{else}}

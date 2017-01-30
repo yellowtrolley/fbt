@@ -3,10 +3,10 @@
 {{#bs-form formLayout="vertical" action="save" model=user as |form|}}
   {{form.element controlType="email" label="email" placeholder="email" property="email"}}
   {{form.element controlType="text" label="password" placeholder="password" property="password"}}
-  {{#form.element label="roles" property="roles" useIcons=false as |el|}}
     
+  {{#form.element label="roles" property="roles" useIcons=false as |el|}}
       {{#power-select-multiple
-          options=roles
+          options=allRoles
           selected=user.roles
           placeholder="Select roles..."
           onchange=(action (mut user.roles))
