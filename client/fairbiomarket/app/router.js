@@ -14,14 +14,14 @@ Router.map(function() {
   this.route('admin', function() {
     this.route('invitations');
     this.route('contacts');
-    this.route('user', function() {
+    this.route('users', function() {
       this.route('new');
     });
     this.route('roles');
     this.route('categories');
   });
 
-  this.route('item', function() {
+  this.route('items', function() {
     this.route('new');
     this.route('edit', { path: '/:item_id/edit' });
   });

@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
 
   actions: {
   	save(user) {
-    	user.save().then(() => this.transitionToRoute('admin.user'));
+    	user.save().then(() => this.transitionToRoute('admin.users'));
   	},
 
     willTransition(transition) {

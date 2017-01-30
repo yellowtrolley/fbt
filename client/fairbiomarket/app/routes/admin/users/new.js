@@ -9,7 +9,7 @@ export default Ember.Route.extend({
   },
 
   renderTemplate() {
-    this.render('admin/user/form');
+    this.render('admin/users/form');
   }/*,
 
   actions: {

@@ -5,7 +5,7 @@
   {{/each}}
 {{/if}}
 
-{{#bs-form formLayout="vertical" action="save" model=item as |form|}}
+{{#bs-form formLayout="vertical" action="buttonClicked" model=item as |form|}}
   {{form.element controlType="text" label="Item name" placeholder="Item name" property="name"}}
   {{form.element controlType="number" label="Unit price" placeholder="Unit price" property="price"}}
   {{#form.element label="Categories" property="categories" useIcons=false as |el|}}
@@ -24,8 +24,8 @@
   {{form.element controlType="textarea" label="Long description" placeholder="Long description" property="long_description"}}
 
   {{#form.element label="Images" property="image_ids" }}
-    {{file-upload class="btn btn-default btn-file" url="/images" model=item property="imageids"}}
+    {{file-upload url="/images" model=item property="imageids"}}
   {{/form.element}}
 
-  {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "save" item)}}
+  {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "buttonClicked" item)}}
 {{/bs-form}}

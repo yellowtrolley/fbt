@@ -17,7 +17,7 @@ export default Ember.Route.extend({
 
   // For setting a non-default template location, we can use the renderTemplate hook.
   renderTemplate() {
-    this.render('item/form');
+    this.render('items/form');
   },
 
   actions: {

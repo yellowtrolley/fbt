@@ -15,9 +15,9 @@
     <div class="row">
       {{#each results as |item|}}
         <div class="col-md-4">
-          {{#item/item-item item=item}}
+          {{#item/-item item=item}}
             <button class="btn btn-success btn-sm" {{action 'addToShoppingCart' item}}>Add to Cart</button>
-          {{/item/item-item}}
+          {{/item/-item}}
         </div>
       {{/each}}
     </div>
