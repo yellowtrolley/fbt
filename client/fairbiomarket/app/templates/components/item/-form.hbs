@@ -1,0 +1,31 @@
+{{#if item.isError}}
+  Error!!
+  {{#each item.errors as |error|}}
+    {{error}}
+  {{/each}}
+{{/if}}
+
+{{#bs-form formLayout="vertical" action="save" model=item as |form|}}
+  {{form.element controlType="text" label="Item name" placeholder="Item name" property="name"}}
+  {{form.element controlType="number" label="Unit price" placeholder="Unit price" property="price"}}
+  {{#form.element label="Categories" property="categories" useIcons=false as |el|}}
+    
+      {{#power-select-multiple
+          options=categories
+          selected=item.categories
+          placeholder="Select some categories..."
+          onchange=(action (mut item.categories))
+          as |category|
+      }}
+        {{category.name}}
+      {{/power-select-multiple}}
+  {{/form.element}}
+  {{form.element controlType="text" label="Description" placeholder="Description" property="description"}}
+  {{form.element controlType="textarea" label="Long description" placeholder="Long description" property="long_description"}}
+
+  {{#form.element label="Images" property="image_ids" }}
+    {{file-upload class="btn btn-default btn-file" url="/images" model=item property="imageids"}}
+  {{/form.element}}
+
+  {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "save" item)}}
+{{/bs-form}}
