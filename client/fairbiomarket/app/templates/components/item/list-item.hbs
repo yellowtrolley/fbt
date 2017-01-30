@@ -1,0 +1,31 @@
+<div class="panel panel-default library-item">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{item.name}}</h3>
+    </div>
+    <div class="panel-body">
+        <p>Price: {{item.price}}</p>
+        
+        <p>Description: {{item.description}}</p>
+        
+        <p>Categories:
+            <ul>
+                {{#each item.categories as |cat|}}
+                    <li>{{cat.name}}</li>
+                {{/each}}
+            </ul>
+        </p>
+
+        <p>Images:
+            <ul>
+                {{#each item.imageids as |img|}}
+                    <li>
+                        <img src="/images/{{img}}" width="200"/>
+                    </li>
+                {{/each}}
+            </ul>
+        </p>
+    </div>
+    <div class="panel-footer text-right">
+      {{yield}}
+    </div>
+</div>

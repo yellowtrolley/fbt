@@ -85,6 +85,8 @@
 	},
 	"file_history":
 	[
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/routes/sell.js",
+		"/home/pablo/git/fairbiomarket/client/fairbiomarket/mirage/config.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/item/new.hbs",
 		"/home/pablo/git/photodb/src/main/java/org/pgg/photodb/web/PhotoController.java",
 		"/home/pablo/proyectos/photoDB/photodb/src/main/webapp/WEB-INF/templates/home.html",
@@ -136,7 +138,6 @@
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/routes/application.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/torii-providers/test-provider.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/torii-providers/test-oauth2.js",
-		"/home/pablo/git/fairbiomarket/client/fairbiomarket/mirage/config.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/mirage/factories/user.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/torii-adapters/test-adapter.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/mirage/factories/session.js",
@@ -147,7 +148,6 @@
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/routes/item/edit.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/components/item-form.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/components/item-form.hbs",
-		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/routes/sell.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/item/index.hbs",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/item/buy.hbs",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/products/form.hbs",
@@ -295,6 +295,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"sell.js",
+				"app/routes/sell.js"
+			],
 			[
 				"packa",
 				"package.json"
