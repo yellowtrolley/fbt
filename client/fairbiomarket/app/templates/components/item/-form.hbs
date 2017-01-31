@@ -6,8 +6,10 @@
 {{/if}}
 
 {{#bs-form formLayout="vertical" action="buttonClicked" model=item as |form|}}
-  {{form.element controlType="text" label="Item name" placeholder="Item name" property="name"}}
+  {{form.element controlType="text" label="Item name" placeholder="Item name" property="name" progress=progress}}
+  
   {{form.element controlType="number" label="Unit price" placeholder="Unit price" property="price"}}
+  
   {{#form.element label="Categories" property="categories" useIcons=false as |el|}}
     
       {{#power-select-multiple
@@ -20,19 +22,16 @@
         {{category.name}}
       {{/power-select-multiple}}
   {{/form.element}}
+  
   {{form.element controlType="text" label="Description" placeholder="Description" property="description"}}
+
   {{form.element controlType="textarea" label="Long description" placeholder="Long description" property="long_description"}}
 
   {{!-- {{#form.element label="Images" property="image_ids" }}
     {{file-upload url="/files" model=item property="imageids"}}
   {{/form.element}} --}}
 
-  <div class="fileupload fileupload-new" data-provides="fileupload">
-    <span class="btn btn-primary btn-file">
-      <span class="fileupload-new">{{t 'item.button.select.images'}}</span>
-      {{file-upload url="/files" model=item property="imageids"}}
-    </span>
-  </div>
+  {{file-upload-progress-bar url="/files" model=item property="imageids" progress=progress}}
 
   {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "buttonClicked" item)}}
 {{/bs-form}}

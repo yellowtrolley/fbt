@@ -26,7 +26,7 @@ export default {
   "item": {
     "button": {
       "select.images": "Select images",
-      "add": "Add"
+      "add": "Add item"
     },
 
     "new.title": 'Create a new item',
