@@ -21,5 +21,16 @@ export default {
   },
     
   "home.welcome.title": "Welcome",
-  "home.welcome.msg": "Search for any Bio, Fair trade and Km 0 item"
+  "home.welcome.msg": "Search for any Bio, Fair trade and Km 0 item",
+
+  "item": {
+    "button": {
+      "select.images": "Select images",
+      "add": "Add"
+    },
+
+    "new.title": 'Create a new item',
+
+    "update.tilte": 'Edit item '
+  }
 };
