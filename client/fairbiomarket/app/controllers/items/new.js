@@ -1,37 +1,29 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	  title: 'Create a new item',
-    buttonLabel: 'Add',
-    
-    actions: {
-      addImages: function(fileIds) {
-        let item = this.get('model');
-        item.set('imageids', fileIds);
-      },
+  i18n: Ember.inject.service(),
 
-      save(newItem) {
-        newItem.save().then(() => this.transitionToRoute('sell'));
-      },
+  title: '',
+  buttonLabel: '',
 
-      willTransition(transition) {
-        let model = this.get('model');
+  init() {
+    this._super();
+    this.set('title', this.get('i18n').t('item.new.title'/*, { post: post }*/));
+    this.set('buttonLabel', this.get('i18n').t('item.button.select.add'));
+  },
 
-        if (model.get('hasDirtyAttributes')) { // use Ember Model’s hasDirtyAttributes computed property to check whether something was changed in the model
-          let confirmation = confirm("Your changes haven't saved yet. Would you like to leave this form?");
+  actions: {
+    addImages: function(fileIds) {
+      let item = this.get('model');
+      item.set('imageids', fileIds);
+    },
 
-          if (confirmation) {
-            if (model.get('isNew')) {
-              model.destroyRecord();
-            }
-          } else {
-            transition.abort();
-          }
-        }
-      },
+    save(newItem) {
+      newItem.save().then(() => this.transitionToRoute('sell'));
+    },
 
-      createCategory(name) {
-        this.store.createRecord('category', {name: name});
-      }
-  	}
+    createCategory(name) {
+      this.store.createRecord('category', {name: name});
+    }
+	}
 });

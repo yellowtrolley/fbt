@@ -6,7 +6,7 @@ export default EmberUploader.FileField.extend({
 	// url: '/files', // passed as parameter on tag. Eg. /image
 
 	attributeBindings: [
-    'handleDataFn', 'model', 'property'
+    'model', 'property'
 	],
 
   filesDidChange: function(files) {
@@ -27,7 +27,13 @@ export default EmberUploader.FileField.extend({
 		  	console.log(model);
 		  	console.log(property);
 
-		  	model.set(property, data);
+		  	// If property is not initialized
+		  	if (!model.get(property)) {
+		  		model.set(property, Ember.A());
+		  	}
+
+
+		  	model.get(property).pushObjects(data);
 			}, error => {
 			  console.log(error);
 			});

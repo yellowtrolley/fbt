@@ -23,9 +23,16 @@
   {{form.element controlType="text" label="Description" placeholder="Description" property="description"}}
   {{form.element controlType="textarea" label="Long description" placeholder="Long description" property="long_description"}}
 
-  {{#form.element label="Images" property="image_ids" }}
-    {{file-upload url="/images" model=item property="imageids"}}
-  {{/form.element}}
+  {{!-- {{#form.element label="Images" property="image_ids" }}
+    {{file-upload url="/files" model=item property="imageids"}}
+  {{/form.element}} --}}
+
+  <div class="fileupload fileupload-new" data-provides="fileupload">
+    <span class="btn btn-primary btn-file">
+      <span class="fileupload-new">{{t 'item.button.select.images'}}</span>
+      {{file-upload url="/files" model=item property="imageids"}}
+    </span>
+  </div>
 
   {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "buttonClicked" item)}}
 {{/bs-form}}

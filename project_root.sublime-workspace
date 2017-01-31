@@ -27,6 +27,26 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "client/fairbiomarket/app/templates/components/file-upload.hbs",
+			"settings":
+			{
+				"buffer_size": 21,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "# fairbiomarket\n\nThis README outlines the details of collaborating on this Ember application.\nA short introduction of this app could easily go here.\n\n\n## Test Users\nadmin@example.com / admin123\n\n## Firebase url\nhttps://console.firebase.google.com/project/ember-fb80a\n\nhttps://ember-fb80a.firebaseapp.com\n \n\n ## Start Spring Boot embedded tomcat \n bootRun --stacktrace -Xmx1024m -XX:MaxPermSize=128M\n \n java -jar -Dserver.port=8091 \n",
+			"file": "README.md",
+			"file_size": 320,
+			"file_write_time": 131303300597638522,
+			"settings":
+			{
+				"buffer_size": 432,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -68,10 +88,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/pablo/git/fairbiomarket"
+		"/C/Pgm/git/fairbiomarket",
+		"/C/Pgm/git/fairbiomarket/client/fairbiomarket",
+		"/C/Pgm/git/fairbiomarket/client/fairbiomarket/app",
+		"/C/Pgm/git/fairbiomarket/client/fairbiomarket/app/templates",
+		"/C/Pgm/git/fairbiomarket/client/fairbiomarket/app/templates/components"
 	],
 	"file_history":
 	[
+		"/C/Pgm/git/fairbiomarket/lista_de_nombre.txt",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/controllers/admin/categories.js",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/app/templates/admin/users.hbs",
 		"/home/pablo/git/fairbiomarket/client/fairbiomarket/config/environment.js",
@@ -188,8 +213,65 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "client/fairbiomarket/app/templates/components/file-upload.hbs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6,
+								15
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Handlebars/grammars/Handlebars.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 432,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								402,
+								402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
