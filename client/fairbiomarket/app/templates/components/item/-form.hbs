@@ -31,7 +31,7 @@
     {{file-upload url="/files" model=item property="imageids"}}
   {{/form.element}} --}}
 
-  {{file-upload-progress-bar url="/files" model=item property="imageids" progress=progress}}
+  {{file-upload-progress-bar url="/files" model=item property="imageids"}}
 
-  {{bs-button defaultText="Add" type="primary" buttonType="submit" onClick=(action "buttonClicked" item)}}
+  {{bs-button defaultText="Add" type="success" buttonType="submit" onClick=(action "buttonClicked" item)}}
 {{/bs-form}}

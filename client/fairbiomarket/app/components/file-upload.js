@@ -6,7 +6,7 @@ export default EmberUploader.FileField.extend({
 	// url: '/files', // passed as parameter on tag. Eg. /image
 
 	attributeBindings: [
-    'model', 'property'
+    'model', 'property', 'progress'
 	],
 
   filesDidChange: function(files) {
@@ -23,10 +23,6 @@ export default EmberUploader.FileField.extend({
 		  	const model = this.get('model');
 		  	const property = this.get('property');
 		  	
-      	console.log(data);
-		  	console.log(model);
-		  	console.log(property);
-
 		  	// If property is not initialized
 		  	if (!model.get(property)) {
 		  		model.set(property, Ember.A());
@@ -42,15 +38,16 @@ export default EmberUploader.FileField.extend({
     uploader.on('progress', e => {
 		  // Handle progress changes
 		  // Use `e.percent` to get percentage
-		  this.sendAction('progress', e.percent);
-		  console.log('uploading ' + e.percent);
+		  this.set('progress', e.percent);
+		  console.log('uploading ' + parseInt(e.percent, 10));
 		});
 
 		uploader.on('didUpload', e => {
-		  console.log('uploaded!' + e);
+		  this.set('progress', 0);
 		});
 
 		uploader.on('didError', (jqXHR, textStatus, errorThrown) => {
+			this.set('progress', 0);
 		  console.log('Error uploading file!');
 		  console.log(errorThrown);
 		});
