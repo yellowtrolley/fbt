@@ -5,8 +5,6 @@ export default EmberUploader.FileField.extend({
 	multiple: true,
 	// url: '/files', // passed as parameter on tag. Eg. /image
 
-	progress: 0,
-
 	attributeBindings: [
     'model', 'property'
 	],
@@ -44,7 +42,7 @@ export default EmberUploader.FileField.extend({
     uploader.on('progress', e => {
 		  // Handle progress changes
 		  // Use `e.percent` to get percentage
-		  this.set('progress', e.percent);
+		  this.sendAction('progress', e.percent);
 		  console.log('uploading ' + e.percent);
 		});
 
