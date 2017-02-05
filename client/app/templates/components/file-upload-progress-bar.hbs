@@ -1,0 +1,15 @@
+<div class="fileupload fileupload-new" data-provides="fileupload">
+  <span class="btn btn-success btn-file">
+    <span class="fileupload-new">{{btnLabel}}</span>
+    {{file-upload url=url model=model progress=progress property=property}}
+  </span>
+</div>
+
+{{#if progress}}
+	<div class="progress">
+	  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+	    {{progress}}%
+	  </div>
+	</div>
+{{/if}}
+{{yield}}

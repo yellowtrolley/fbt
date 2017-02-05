@@ -1,0 +1,29 @@
+<h1>Contact Page</h1>
+
+<p class="well well-sm">If you have any question or feedback please leave a message with your email address.</p>
+
+<div class="row">
+	<div class="col-md-6">
+		{{#if responseMessage}}
+			<div class="alert alert-success">
+          <h4>Thank you! Your message is sent.</h4>
+          <p>To: {{emailAddress}}</p>
+          <p>Message: {{message}}</p>
+      </div>
+		{{else}}
+			<div class="form-group has-feedback {{if model.isValidEmail 'has-success'}}">
+				<label>Your email address*:</label>
+			  {{input type="email" value=emailAddress class="form-control" placeholder="Your e-mail address" autofocus="autofocus"}}
+			  {{#if isValidEmail}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+			</div>
+
+			<div class="form-group has-feedback {{if model.isValidMessage 'has-success'}}">
+				<label>Your message*:</label>
+			  {{textarea value=message class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7"}}
+			  {{#if isValidMessage}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+			</div>  
+			  	
+			<button class="btn btn-success" disabled={{isNotValid}} {{action 'sendMessage'}}>Send message</button>
+		{{/if}}
+	</div>
+</div>

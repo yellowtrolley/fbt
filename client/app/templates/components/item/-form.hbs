@@ -1,0 +1,44 @@
+{{#if item.isError}}
+  Error!!
+  {{#each item.errors as |error|}}
+    {{error}}
+  {{/each}}
+{{/if}}
+
+{{#bs-form formLayout="vertical" action="buttonClicked" model=item as |form|}}
+  {{form.element controlType="text" label="i18n.item.name.label" placeholder="i18n.item.name.holder" property="name" progress=progress}}
+  
+  {{form.element controlType="number" label="Unit price" placeholder="Unit price" property="price"}}
+  
+  {{#form.element label="Categories" property="categories" useIcons=true as |el|}}
+      {{#power-select-multiple
+          options=categories
+          selected=item.categories
+          placeholder="Select some categories..."
+          onchange=(action (mut item.categories))
+          as |category|
+      }}
+        {{category.name}}
+      {{/power-select-multiple}}
+  {{/form.element}}
+  
+  {{#form.element label="Brand" property="brand" useIcons=false as |el|}}
+    {{#power-select-with-create
+        options=brands
+        selected=item.brand
+        onchange=(action (mut item.brand))
+        oncreate=(action "createBrand") 
+        showCreateWhen=(action "hideCreateOptionOnSameName") as |brand term|
+    }}
+      {{brand}}
+    {{/power-select-with-create}}
+  {{/form.element}}
+
+  {{form.element controlType="text" label="Description" placeholder="Description" property="description"}}
+
+  {{form.element controlType="textarea" label="Long description" placeholder="Long description" property="long_description"}}
+
+  {{file-upload-progress-bar url="/files" model=item property="imageids" btnLabel='item.button.select.images'}}
+
+  {{bs-button defaultText="Add" type="success" buttonType="submit" onClick=(action "buttonClicked" item)}}
+{{/bs-form}}
