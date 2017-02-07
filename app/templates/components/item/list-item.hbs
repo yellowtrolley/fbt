@@ -1,0 +1,22 @@
+<div class="panel panel-default library-item">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{item.name}} - {{item.price}}&euro;  - {{item.rating}} -  Sold by {{item.seller.name}} </h3>
+    </div>
+    <div class="panel-body">
+        <img src="/files/{{item.main_image_id}}" width="200"/>
+        <p>Categories:
+            <ul>
+                {{#each item.categories as |cat|}}
+                    <li>{{cat.name}}</li>
+                {{/each}}
+            </ul>
+        </p>
+
+        <p>{{item.description}}</p>
+
+        <p>Brand: {{item.brand}}</p>
+    </div>
+    <div class="panel-footer text-right">
+        {{yield}}
+    </div>
+</div>
